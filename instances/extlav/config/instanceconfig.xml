@@ -16,5 +16,4 @@
 		<wsgi mainpackage="lav"/>
 	</site>
 
-	<menu package="*"/>
 </GenRoBag>

@@ -3,7 +3,9 @@
 
 class Table(object):
     def config_db(self, pkg):
-        tbl =  pkg.table('piano_lavorazione_riga',pkey='id',name_long='Riga piano',name_plural='Righe piano',caption_field='id')
+        tbl =  pkg.table('piano_lavorazione_riga',pkey='id',
+                    name_long='Riga piano',name_plural='Righe piano',
+                    caption_field='id',partition_fasonista_id='fasonista_id')
         self.sysFields(tbl)
         tbl.column('piano_lavorazione_id',size='22',name_long='Piano lavorazione').relation('piano_lavorazione.id',
                     relation_name='righe', mode='foreignkey',onDelete='cascade')
@@ -18,7 +20,7 @@ class Table(object):
         tbl.column('data_spedizione', dtype='D', name_long='Data spedizione')
 
         tbl.column('quantita_da_produrre', dtype='L', name_long='Quantità da produrre')
-
+        tbl.aliasColumn('fasonista_id','@commessa_id.fasonista_id')
 
     def importaRiga(self,riga,piano_lavorazione_id=None):
 

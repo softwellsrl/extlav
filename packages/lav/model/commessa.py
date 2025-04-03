@@ -3,7 +3,9 @@
 
 class Table(object):
     def config_db(self,pkg):
-        tbl =  pkg.table('commessa',pkey='id',name_long='Commessa',name_plural='Commesse',caption_field='id')
+        tbl =  pkg.table('commessa',pkey='id',name_long='Commessa',
+                        name_plural='Commesse',caption_field='codice_commessa',
+                        partition_fasonista_id='fasonista_id')
         self.sysFields(tbl)
         tbl.column('fasonista_id',size='22',name_long='Fasonista').relation('fasonista.id',relation_name='commesse', mode='foreignkey',deferred=True)
         tbl.column('codice_commessa',size=':13',name_long='Codice commessa',unique=True,indexed=True)

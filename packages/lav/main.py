@@ -6,7 +6,8 @@ from datetime import date
 class Package(GnrDboPackage):
     def config_attributes(self):
         return dict(comment='lav package',sqlschema='lav',sqlprefix=True,
-                    name_short='Lav', name_long='Lavorazioni', name_full='Lav')
+                    name_short='Lav', name_long='Lavorazioni',
+                    name_full='Lav')
                     
     def config_db(self, pkg):
         pass
