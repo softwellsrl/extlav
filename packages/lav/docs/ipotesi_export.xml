@@ -1,0 +1,42 @@
+<Produzione>
+  <Commesse>
+    <Commessa id="C12345" data_emissione="2024-12-01" cliente="XYZ SPA" priorita="Alta">
+      <Articolo codice="ART5678" descrizione="Giubbotto Uomo Invernale">
+        <Taglie>
+          <Taglia codice="M" quantita="100" />
+          <Taglia codice="L" quantita="120" />
+          <Taglia codice="XL" quantita="80" />
+        </Taglie>
+        <AccessoriMancanti>
+          <Accessorio codice="BOT001" descrizione="Bottone Nero" quantita_mancante="50" />
+          <Accessorio codice="ZIP003" descrizione="Cerniera YKK" quantita_mancante="20" />
+        </AccessoriMancanti>
+      </Articolo>
+      <AvanzamentoProduzione>
+        <Assemblaggio data_inizio="2025-01-05" />
+        <Cucitura data_inizio="2025-01-08" />
+        <Confezionamento data_inizio="2025-01-10" />
+        <Evasione data="2025-01-12" />
+        <Spedizione data="2025-01-13" />
+      </AvanzamentoProduzione>
+    </Commessa>
+  </Commesse>
+
+  <Bollettine>
+    <Bollettina numero="BOL987" data="2025-01-03" terzista="Terzista A" commessa_ref="C12345">
+      <Materiali>
+        <Materiale codice="TESS001" descrizione="Tessuto Lana" quantita="50" bloccante="true" negativo_magazzino="true" />
+        <Materiale codice="FOD001" descrizione="Fodera" quantita="50" bloccante="false" negativo_magazzino="false" />
+      </Materiali>
+    </Bollettina>
+  </Bollettine>
+
+  <AccessoriMancantiGlobale>
+    <Accessorio codice="BOT001" descrizione="Bottone Nero">
+      <RigheBollettine>
+        <Riga bollettina="BOL987" terzista="Terzista A" flag_negativo="true" />
+        <Riga bollettina="BOL991" terzista="Terzista B" flag_negativo="true" />
+      </RigheBollettine>
+    </Accessorio>
+  </AccessoriMancantiGlobale>
+</Produzione>
